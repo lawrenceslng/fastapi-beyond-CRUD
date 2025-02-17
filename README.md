@@ -1,6 +1,15 @@
-# FastAPI Beyond CRUD 
+# Assignment #7: Github Actions for FastAPI Beyond CRUD 
 
-This is a fork of the repository [](). See the original README in that repository.
+This is a fork of the repository [FastAPI Beyond CRUD](https://github.com/jod35/fastapi-beyond-CRUD). For the original README, click on the link.
+
+This repository is created to demonstrate the use of Github actions for Assignment #7 of the Spring 2025 DevOps course at USF with the following requirements:
+
+```
+- GitHub actions that verify that Conventional Commits were used during PR creation. Close the PR if a user does not follow the Conventional Commit and send a notification about the failure.
+- Create nightly builds (12am) from Main and push the container image to a container registry of choice. If test cases fail, the nightly build fails and cannot be stored in the registry, and a notification is sent to users.
+- Use  https://sendgrid.com/en-us or https://ethereal.email/ to send emails.
+- No extra download of any kind. I will run “docker compose up”. This is for me to verify the project running.
+```
 
 ## Steps
 
@@ -12,6 +21,8 @@ This is the source code for the [FastAPI Beyond CRUD](https://youtube.com/playli
 
 For more details, visit the project's [website](https://jod35.github.io/fastapi-beyond-crud-docs/site/).
 
+## TO BE CLEANED UP BELOW
+------------------------------------------------------------------------------------------
 ## Table of Contents
 
 1. [Getting Started](#getting-started)
