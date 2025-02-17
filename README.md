@@ -22,7 +22,7 @@ This repository is created to demonstrate the use of Github actions for Assignme
 - test success message, then failure message
 
 - do nightly_build.yaml
-- setup dockerhub username and token secret
+- setup ALL the secrets
 
 ## TO BE CLEANED UP BELOW
 ------------------------------------------------------------------------------------------
