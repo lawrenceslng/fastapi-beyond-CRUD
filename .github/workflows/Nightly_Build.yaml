@@ -2,7 +2,7 @@ name: Nightly Build and Push to DockerHub
 
 on:
   schedule:
-    - cron: "48 * * * *"  # Runs every day at 12 AM UTC
+    - cron: "0 15 * * *"  # Runs every day at 12 AM UTC
   workflow_dispatch:  # Allows manual trigger
 
 jobs:
@@ -84,15 +84,11 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and Push Web Image
-        # with:
-        #   username: ${{ secrets.DOCKERHUB_USERNAME }}
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-beyond-crud-web:nightly -f Dockerfile .
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-beyond-crud-web:nightly
 
       - name: Build and Push Celery Image
-        # with:
-          # username: ${{ secrets.DOCKERHUB_USERNAME }}
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-beyond-crud-celery:nightly -f Dockerfile .
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-beyond-crud-celery:nightly
