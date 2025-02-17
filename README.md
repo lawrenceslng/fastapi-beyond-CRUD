@@ -15,14 +15,17 @@ This repository is created to demonstrate the use of Github actions for Assignme
 
 - copy .env and init file
 - adjust dockerfile to run migration
-- 
+- make Conventional_Commit.yaml
+
+## TO BE CLEANED UP BELOW
+------------------------------------------------------------------------------------------
+
 
 This is the source code for the [FastAPI Beyond CRUD](https://youtube.com/playlist?list=PLEt8Tae2spYnHy378vMlPH--87cfeh33P&si=rl-08ktaRjcm2aIQ) course. The course focuses on FastAPI development concepts that go beyond the basic CRUD operations.
 
 For more details, visit the project's [website](https://jod35.github.io/fastapi-beyond-crud-docs/site/).
 
-## TO BE CLEANED UP BELOW
-------------------------------------------------------------------------------------------
+
 ## Table of Contents
 
 1. [Getting Started](#getting-started)
