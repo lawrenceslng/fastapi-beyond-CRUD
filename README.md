@@ -60,3 +60,4 @@ A demonstration of the failure and success cases for running the tests and uploa
 
 ## Video Demonstration
 
+[![PR Demo Youtube Video](https://img.youtube.com/vi/eGzjaJjSCRM/0.jpg)](https://www.youtube.com/watch?v=eGzjaJjSCRM)
