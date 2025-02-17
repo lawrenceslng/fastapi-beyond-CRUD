@@ -14,32 +14,6 @@ jobs:
       - name: Check Commit Messages with action
         uses: webiny/action-conventional-commits@v1.3.0
 
-      - name: Test success TEST ONLY
-        if: success()
-        uses: dawidd6/action-send-mail@v4
-        with:
-          # Required mail server address if not connection_url:
-          server_address: smtp.ethereal.email
-          # Server port, default 25:
-          server_port: 587
-          # Optional (recommended) mail server username:
-          username: chance.hintz38@ethereal.email
-          # Optional (recommended) mail server password:
-          password: z7UrtPGsrn7zFKMRKD
-          # Required mail subject:
-          subject: "SUCCESSFUL PR!"
-          # Required recipients' addresses:
-          to: lsng@dons.usfca.edu
-          # Required sender full name (address can be skipped):
-          from: "GitHub Actions <no-reply@github.com>"
-          body: |
-            Hello ${{ github.event.pull_request.user.login }},
-
-            Your pull request #${{ github.event.pull_request.number }} IS SUCCESSFUL!
-
-            Thanks,
-            GitHub Actions Bot
-
       - name: Send failure notification if invalid commit messages
         if: failure()
         uses: dawidd6/action-send-mail@v4
