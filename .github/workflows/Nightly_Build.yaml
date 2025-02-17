@@ -2,7 +2,7 @@ name: Nightly Build and Push to DockerHub
 
 on:
   schedule:
-    - cron: "38 * * * *"  # Runs every day at 12 AM UTC
+    - cron: "48 * * * *"  # Runs every day at 12 AM UTC
   workflow_dispatch:  # Allows manual trigger
 
 jobs:
@@ -24,7 +24,7 @@ jobs:
           pip install -r requirements.txt  
 
       - name: Run Tests
-        with:
+        env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
           JWT_ALGORITHM: ${{ secrets.JWT_ALGORITHM }}
