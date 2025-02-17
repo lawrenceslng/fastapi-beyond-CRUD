@@ -37,12 +37,9 @@ jobs:
 
             Your pull request #${{ github.event.pull_request.number }} does not follow the Conventional Commits format.
 
-            Please update your commit messages to follow the format:
-            - feat(scope): Add new feature
-            - fix(scope): Fix bug
-            - chore(scope): Update dependencies
+            Please update your commit messages to follow the format.
 
-            More details: https://www.conventionalcommits.org/en/v1.0.0/
+            See here for more details: https://www.conventionalcommits.org/en/v1.0.0/
 
             Thanks,
             GitHub Actions Bot
