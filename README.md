@@ -13,10 +13,16 @@ This repository is created to demonstrate the use of Github actions for Assignme
 
 ## Steps
 
+- use python 3.12.9 venv
+- add pytest==8.3.4 to requirements.txt
+
 - copy .env and init file
 - adjust dockerfile to run migration
 - make Conventional_Commit.yaml
 - test success message, then failure message
+
+- do nightly_build.yaml
+- setup dockerhub username and token secret
 
 ## TO BE CLEANED UP BELOW
 ------------------------------------------------------------------------------------------
