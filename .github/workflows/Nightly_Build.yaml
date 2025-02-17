@@ -2,7 +2,7 @@ name: Nightly Build and Push to DockerHub
 
 on:
   schedule:
-    - cron: "28 * * * *"  # Runs every day at 12 AM UTC
+    - cron: "32 * * * *"  # Runs every day at 12 AM UTC
   workflow_dispatch:  # Allows manual trigger
 
 jobs:
@@ -41,10 +41,8 @@ jobs:
         run: |
           pytest 
 
-    # Send success email if tests pass
-    if: success()
-    steps:
-      - name: Send Test Success Email
+      - name: Send success email if tests pass
+        if: success()
         uses: dawidd6/action-send-mail@v4
         with:
           server_address: smtp.ethereal.email
@@ -56,10 +54,8 @@ jobs:
           from: "GitHub Actions <noreply@github.com>"
           body: "Great news! The nightly build tests have passed successfully. Proceeding to the Docker image build and push."
 
-    # Send failure email if tests fail
-    if: failure()
-    steps:
-      - name: Send Test Failure Email
+      - name: Send failure email if tests fail
+        if: failure()
         uses: dawidd6/action-send-mail@v4
         with:
           server_address: smtp.ethereal.email
@@ -97,10 +93,8 @@ jobs:
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-beyond-crud-celery:nightly -f Dockerfile .
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-beyond-crud-celery:nightly
       
-    # Send success email if images were successfully pushed
-    if: success()
-    steps:
-      - name: Send Image Push Success Email
+      - name: Send success email if images were successfully pushed
+        if: success()
         uses: dawidd6/action-send-mail@v4
         with:
           server_address: smtp.ethereal.email
@@ -112,17 +106,15 @@ jobs:
           from: "GitHub Actions <noreply@github.com>"
           body: "The nightly build was successful, and the Docker images have been pushed to DockerHub."
 
-    # Send failure email if image push fails
-    if: failure()
-    steps:
-      - name: Send Image Push Failure Email
-        uses: dawidd6/action-send-mail@v4
-        with:
-          server_address: smtp.ethereal.email
-          server_port: 587
-          username: chance.hintz38@ethereal.email
-          password: z7UrtPGsrn7zFKMRKD
-          subject: "❌ Nightly Build - Docker Image Push Failed!"
-          to: "user@example.com"
-          from: "GitHub Actions <noreply@github.com>"
-          body: "The nightly build failed to push the Docker images to DockerHub. Please investigate the issue."
+        - name: Send failure email if image push fails
+          if: failure()
+          uses: dawidd6/action-send-mail@v4
+          with:
+            server_address: smtp.ethereal.email
+            server_port: 587
+            username: chance.hintz38@ethereal.email
+            password: z7UrtPGsrn7zFKMRKD
+            subject: "❌ Nightly Build - Docker Image Push Failed!"
+            to: "user@example.com"
+            from: "GitHub Actions <noreply@github.com>"
+            body: "The nightly build failed to push the Docker images to DockerHub. Please investigate the issue."
