@@ -84,11 +84,15 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and Push Web Image
+        # with:
+        #   username: ${{ secrets.DOCKERHUB_USERNAME }}
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-beyond-crud-web:nightly -f Dockerfile .
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-beyond-crud-web:nightly
 
       - name: Build and Push Celery Image
+        # with:
+          # username: ${{ secrets.DOCKERHUB_USERNAME }}
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-beyond-crud-celery:nightly -f Dockerfile .
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-beyond-crud-celery:nightly
@@ -106,15 +110,15 @@ jobs:
           from: "GitHub Actions <noreply@github.com>"
           body: "The nightly build was successful, and the Docker images have been pushed to DockerHub."
 
-        - name: Send failure email if image push fails
-          if: failure()
-          uses: dawidd6/action-send-mail@v4
-          with:
-            server_address: smtp.ethereal.email
-            server_port: 587
-            username: chance.hintz38@ethereal.email
-            password: z7UrtPGsrn7zFKMRKD
-            subject: "❌ Nightly Build - Docker Image Push Failed!"
-            to: "user@example.com"
-            from: "GitHub Actions <noreply@github.com>"
-            body: "The nightly build failed to push the Docker images to DockerHub. Please investigate the issue."
+      - name: Send failure email if image push fails
+        if: failure()
+        uses: dawidd6/action-send-mail@v4
+        with:
+          server_address: smtp.ethereal.email
+          server_port: 587
+          username: chance.hintz38@ethereal.email
+          password: z7UrtPGsrn7zFKMRKD
+          subject: "❌ Nightly Build - Docker Image Push Failed!"
+          to: "user@example.com"
+          from: "GitHub Actions <noreply@github.com>"
+          body: "The nightly build failed to push the Docker images to DockerHub. Please investigate the issue."
