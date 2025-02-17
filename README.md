@@ -24,6 +24,8 @@ This repository is created to demonstrate the use of Github actions for Assignme
 - do nightly_build.yaml
 - setup ALL the secrets
 
+need to fix triggers for success and failure on Nightly Build
+
 ## TO BE CLEANED UP BELOW
 ------------------------------------------------------------------------------------------
 
