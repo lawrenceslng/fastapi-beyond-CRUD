@@ -73,12 +73,12 @@ jobs:
       - name: Build and Push Web Image
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-beyond-crud-web:nightly -f Dockerfile .
-          docker pushes ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-beyond-crud-web:nightly
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-beyond-crud-web:nightly
 
       - name: Build and Push Celery Image
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-beyond-crud-celery:nightly -f Dockerfile .
-          docker pushes ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-beyond-crud-celery:nightly
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-beyond-crud-celery:nightly
 
       - name: Send failure email if image push fails
         if: failure()
