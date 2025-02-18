@@ -2,7 +2,7 @@ name: Nightly Build and Push to DockerHub
 
 on:
   schedule:
-    - cron: "43 6 * * *"  # Runs every day at 12 AM UTC
+    - cron: "0 8 * * *"  # Runs every day at 12 AM Pacific time
   workflow_dispatch:  # Allows manual trigger
 
 jobs:

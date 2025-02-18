@@ -60,4 +60,14 @@ A demonstration of the failure and success cases for running the tests and uploa
 
 ## Video Demonstration
 
+Pull Request Demo Video
+
+Length: ~5 mins
+
 [![PR Demo Youtube Video](https://img.youtube.com/vi/eGzjaJjSCRM/0.jpg)](https://www.youtube.com/watch?v=eGzjaJjSCRM)
+
+Nightly Build Demo Video
+
+Length: ~7 mins
+
+[![Nightly Build Demo Youtube Video](https://img.youtube.com/vi/YGIAwYLylpI/0.jpg)](https://www.youtube.com/watch?v=YGIAwYLylpI)
