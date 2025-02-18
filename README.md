@@ -52,7 +52,7 @@ I created `Nightly_Build.yaml` to do this. It performs a workflow at a specified
 
 If uploading unsuccessful, an email would once again be "sent".
 
-5. In order to run the tests and upload the images to DockerHub, secrets have to be set for the Github repository. Here is a glimpse of the secrets set up:
+5. In order to run the tests and upload the images to DockerHub, secrets have to be set for the Github repository and a DockerHub Personal Access token needed to be created. Here is a glimpse of the secrets set up:
 ![](/README_resources/image.png)
 
 
